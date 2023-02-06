@@ -6,6 +6,11 @@ import GlowingBaby from "../assets/glowing-eyes.png";
 
 // is there a way we could associate eye color string values with images?
 // perhaps so we could do something along the lines of `eyeColorMapper['blue'] and get back the right image?`
+const eyeColorMapper = {
+  blue: BlueBaby,
+  sun: SunBaby,
+  glowing: GlowingBaby
+}
 
 function BabyHog({eyeColor, hobby, name}) {
   
@@ -16,19 +21,14 @@ function BabyHog({eyeColor, hobby, name}) {
     // how can we reuse this for both buttons?
     // perhaps something with e.target.name === "+"
     if (e.target.name === "+") {
-      setWeight(weight+1);
-      setHeight(height+10)
+      setWeight(weight => weight+1);
+      setHeight(height => height+10);
     } else if (e.target.name === "-") {
-      setWeight(weight-1)
-      setHeight(height-10)
+      setWeight(weight => weight-1);
+      setHeight(height => height-10);
     }
   }
 
-  const eyeColorMapper = {
-    blue: BlueBaby,
-    sun: SunBaby,
-    glowing: GlowingBaby
-  }
   
   // if (eyeColor === "blue"){
   //   eyeColorMapper = BlueBaby
